@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/toko/register/{user}', [App\Http\Controllers\Toko\KontrolerRegisToko::class, 'show'])->name('toko.register');
+
+Route::get('/toko/{toko}', [App\Http\Controllers\KontrolerToko::class, 'show'])->name('toko.show');
+Route::get('/toko', [App\Http\Controllers\KontrolerToko::class, 'index'])->name('toko');
+

@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Generic Online Store') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -64,10 +64,20 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    <!-- Be a partner button -->
+                                    <a class="dropdown-item" href="{{ route('toko.register', Auth::user()->id) }}">
+                                       Jadi partner kami
+                                    </a>
                                 </div>
                             </li>
                         @endguest
                     </ul>
+                    <div class="ms-2">
+                        <form action="" method="post">
+                            <input class="form-control" type="text" name="" id="" placeholder="Cari Toko">
+                        </form> 
+                    </div>
                 </div>
             </div>
         </nav>
