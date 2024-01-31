@@ -23,6 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/toko/register/{user}', [App\Http\Controllers\Toko\KontrolerRegisToko::class, 'show'])->name('toko.register');
 
+Route::post('/toko/register/buat_toko', [App\Http\Controllers\Toko\KontrolerRegisToko::class, 'store'])->name('uploadDataToko');
+
 Route::get('/toko/{toko}', [App\Http\Controllers\KontrolerToko::class, 'show'])->name('toko.show');
 Route::get('/toko', [App\Http\Controllers\KontrolerToko::class, 'index'])->name('toko');
 

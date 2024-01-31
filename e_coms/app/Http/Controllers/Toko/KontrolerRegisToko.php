@@ -13,8 +13,10 @@ class KontrolerRegisToko extends Controller
         return view('toko.register', ['user' => $user]);
     }
 
-    public function create()
+    public function store()
     {
+        // kode membuat data yang tadi
+        // ke database
         
     }
 }
