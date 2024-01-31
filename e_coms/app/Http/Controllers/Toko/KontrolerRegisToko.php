@@ -17,6 +17,16 @@ class KontrolerRegisToko extends Controller
     {
         // kode membuat data yang tadi
         // ke database
-        
+        auth()->user()->toko()->create([
+            'user_id' => auth()->user()->id,
+            'nama_toko' => request('nama_toko'),
+            'deskripsi' => request('deskripsi'),
+            'lokasi'   => request('lokasi'),
+            'deskripsi' => request('deskripsi'),
+            'genre' => request('genre'),
+            'telephone' => request('telephone')
+        ]);
+
+        return redirect('/toko/'.auth()->user()->id);
     }
 }

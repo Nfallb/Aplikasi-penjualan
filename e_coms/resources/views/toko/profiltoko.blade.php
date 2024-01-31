@@ -9,15 +9,15 @@
         <div class="col-9">
             <div class="d-flex justify-content-between align-items-baseline">
                 <div class="d-flex align-items-center">
-                    <h1 class="display-5 border-2 border-bottom border-dark d-inline h-4">Nama toko</h1> <!-- NOTE: Blade template commands are still gonna be executed even though it is behind an html comment -->
+                    <h1 class="display-5 border-2 border-bottom border-dark d-inline h-4">{{  }}</h1> <!-- NOTE: Blade template commands are still gonna be executed even though it is behind an html comment -->
                 </div>
             </div>
 
             <div class="row mt-1 border-bottom border-1 border-dark-subtle ">
                 <span>ID:#0</span>
-                <div class="col-2"><b>0</b> Posts</div>
+                {{-- <div class="col-2"><b>0</b> Posts</div>
                 <div class="col-2"><b>0</b> Followers</div>
-                <div class="col-2"><b>0</b> Following</div>
+                <div class="col-2"><b>0</b> Following</div> --}}
             </div>
             <div class="row">Genre toko: Toko musik</div>
             <div class="row">Banjarbaru, Kalimantan Selatan</div>

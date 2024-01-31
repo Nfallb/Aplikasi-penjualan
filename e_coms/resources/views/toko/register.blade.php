@@ -17,16 +17,16 @@
                         </div>
                     </div>
 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('uploadDataToko') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="namatoko" class="col-md-4 col-form-label text-md-end">Nama Toko :</label>
+                            <label for="nama_toko" class="col-md-4 col-form-label text-md-end">Nama Toko :</label>
 
                             <div class="col-md-6">
-                                <input id="namatoko" type="text" class="form-control @error('namatoko') is-invalid @enderror" name="namatoko" value="{{ old('namatoko') }}" required autocomplete="namatoko" autofocus>
+                                <input id="nama_toko" type="text" class="form-control @error('nama_toko') is-invalid @enderror" name="nama_toko" value="{{ old('nama_toko') }}" required autocomplete="nama_toko" autofocus>
 
-                                @error('namatoko')
+                                @error('nama_toko')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -66,6 +66,48 @@
                             <div class="col-md-1"></div>
                             <h3 class="col-md-10 border-bottom border-2 border-dark-subtle ">Alamat Toko</h3>
                             <div class="col-md-1"></div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="lokasi" class="col-md-4 col-form-label text-md-end">Lokasi :</label>
+                        
+                            <div class="col-md-6">
+                                <input id="lokasi" type="text" class="form-control @error('lokasi') is-invalid @enderror" name="lokasi" value="{{ old('lokasi') }}" required autocomplete="lokasi">
+                        
+                                @error('lokasi')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="genre" class="col-md-4 col-form-label text-md-end">Genre :</label>
+                        
+                            <div class="col-md-6">
+                                <input id="genre" type="text" class="form-control @error('genre') is-invalid @enderror" name="genre" value="{{ old('genre') }}" required autocomplete="genre">
+                        
+                                @error('genre')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="deskripsi" class="col-md-4 col-form-label text-md-end">deskripsi :</label>
+                        
+                            <div class="col-md-6">
+                                <input id="deskripsi" type="text" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" value="{{ old('deskripsi') }}" required autocomplete="deskripsi">
+                        
+                                @error('deskripsi')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
 
                         <!-- Disini spot alamat toko -->
