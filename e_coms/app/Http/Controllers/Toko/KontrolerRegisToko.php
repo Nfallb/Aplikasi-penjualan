@@ -20,19 +20,18 @@ class KontrolerRegisToko extends Controller
 
     public function store()
     {
+        $data_tervalidasi = request()->validate([
+            'nama_toko' => ['string', 'max:30'],
+            'deskripsi' => ['string'],
+            'lokasi' => ['string'],
+            'genre' => ['string'],
+            'telephone' => ['string'],
+            'sosmed' => ['string'],
+        ]);
         // kode membuat data yang tadi
         // ke database
-        auth()->user()->toko()->create([
-            'user_id' => auth()->user()->id,
-            'nama_toko' => request('nama_toko'),
-            'deskripsi' => request('deskripsi'),
-            'lokasi'   => request('lokasi'),
-            'deskripsi' => request('deskripsi'),
-            'genre' => request('genre'),
-            'telephone' => request('telephone'),
-            'sosmed' => request('sosmed')
-        ]);
+        auth()->user()->toko()->create(array_merge($data_tervalidasi));
 
-        return redirect()->route('toko.show', ['toko' => auth()->user()->toko()->id]);
+        return redirect()->route('toko.show', ['toko' => auth()->user()->toko->id]);
     }
 }

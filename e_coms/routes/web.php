@@ -28,4 +28,6 @@ Route::post('/toko/register/buat_toko', [App\Http\Controllers\Toko\KontrolerRegi
 Route::get('/toko/{toko}', [App\Http\Controllers\KontrolerToko::class, 'show'])->name('toko.show');
 Route::get('/toko', [App\Http\Controllers\KontrolerToko::class, 'index'])->name('toko');
 
+Route::get('/profile/{user}', [App\Http\Controllers\KontrolerProfil::class, 'show'])->name('profile.show');
+
 Route::get('/admin/{admin}', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'show'])->name('admin.show');
