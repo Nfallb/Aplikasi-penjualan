@@ -13,7 +13,7 @@
                             Nama pemilik :
                         </div>
                         <div class="col-md-6">
-                            <b>{{ $user->name }}</b>
+                            <b>{{ auth()->user()->name }}</b>
                         </div>
                     </div>
 
@@ -38,7 +38,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">Email Toko :</label>
     
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ auth()->user()->email }}" required autocomplete="email">
     
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -97,12 +97,26 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="deskripsi" class="col-md-4 col-form-label text-md-end">deskripsi :</label>
+                            <label for="deskripsi" class="col-md-4 col-form-label text-md-end">Deskripsi :</label>
                         
                             <div class="col-md-6">
                                 <input id="deskripsi" type="text" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" value="{{ old('deskripsi') }}" required autocomplete="deskripsi">
                         
                                 @error('deskripsi')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="sosmed" class="col-md-4 col-form-label text-md-end">Sosmed :</label>
+                        
+                            <div class="col-md-6">
+                                <input id="sosmed" type="text" class="form-control @error('deskripsi') is-invalid @enderror" name="sosmed" value="{{ old('sosmed') }}" required autocomplete="sosmed">
+                        
+                                @error('sosmed')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

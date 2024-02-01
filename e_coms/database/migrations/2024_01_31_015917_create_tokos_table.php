@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('lokasi');
             $table->string('deskripsi');
             $table->string('telephone');
+            $table->string('sosmed')->nullable();
             $table->timestamps();
         });
     }

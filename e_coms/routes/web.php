@@ -21,10 +21,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/toko/register/{user}', [App\Http\Controllers\Toko\KontrolerRegisToko::class, 'show'])->name('toko.register');
+Route::get('/toko/register', [App\Http\Controllers\Toko\KontrolerRegisToko::class, 'show'])->name('toko.register');
 
 Route::post('/toko/register/buat_toko', [App\Http\Controllers\Toko\KontrolerRegisToko::class, 'store'])->name('uploadDataToko');
 
-Route::get('/toko/{user}', [App\Http\Controllers\KontrolerToko::class, 'show'])->name('toko.show');
+Route::get('/toko/{toko}', [App\Http\Controllers\KontrolerToko::class, 'show'])->name('toko.show');
 Route::get('/toko', [App\Http\Controllers\KontrolerToko::class, 'index'])->name('toko');
 
+Route::get('/admin/{admin}', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'show'])->name('admin.show');

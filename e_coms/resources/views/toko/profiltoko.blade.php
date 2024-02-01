@@ -9,7 +9,7 @@
         <div class="col-9">
             <div class="d-flex justify-content-between align-items-baseline">
                 <div class="d-flex align-items-center">
-                    <h1 class="display-5 border-2 border-bottom border-dark d-inline h-4">{{  }}</h1> <!-- NOTE: Blade template commands are still gonna be executed even though it is behind an html comment -->
+                    <h1 class="display-5 border-2 border-bottom border-dark d-inline h-4">{{ $toko->nama_toko }}</h1> <!-- NOTE: Blade template commands are still gonna be executed even though it is behind an html comment -->
                 </div>
             </div>
 
@@ -19,9 +19,11 @@
                 <div class="col-2"><b>0</b> Followers</div>
                 <div class="col-2"><b>0</b> Following</div> --}}
             </div>
-            <div class="row">Genre toko: Toko musik</div>
-            <div class="row">Banjarbaru, Kalimantan Selatan</div>
-            <div class="row">Deskripsi lorem ipsum dolor sit amet</div>
+            <div class="row">Genre Toko: {{ $toko->genre }} </div>
+            <div class="row">{{$toko->lokasi}}</div>
+            <div class="row">{{$toko->deskripsi}}</div>
+                <div class="row">{{$toko->telephone}}</div>
+            <div class="row">{{$toko->sosmed}}</div>
         </div>
     </div>
     

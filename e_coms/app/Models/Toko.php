@@ -13,6 +13,7 @@ class Toko extends Model
         'lokasi',
         'deskripsi',
         'telephone',
+        'sosmed',
     ];
 
     public function user()

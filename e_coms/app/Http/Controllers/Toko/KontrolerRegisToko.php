@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class KontrolerRegisToko extends Controller
 {
+    public function _construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function show(User $user)
     {
         return view('toko.register', ['user' => $user]);
@@ -24,9 +29,10 @@ class KontrolerRegisToko extends Controller
             'lokasi'   => request('lokasi'),
             'deskripsi' => request('deskripsi'),
             'genre' => request('genre'),
-            'telephone' => request('telephone')
+            'telephone' => request('telephone'),
+            'sosmed' => request('sosmed')
         ]);
 
-        return redirect('/toko/'.auth()->user()->id);
+        return redirect()->route('toko.show', ['toko' => auth()->user()->toko()->id]);
     }
 }
