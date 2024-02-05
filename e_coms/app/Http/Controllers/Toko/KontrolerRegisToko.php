@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Toko;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class KontrolerRegisToko extends Controller
 {
