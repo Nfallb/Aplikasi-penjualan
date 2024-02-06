@@ -32,6 +32,8 @@ Route::get('/toko', [App\Http\Controllers\KontrolerToko::class, 'index'])->name(
 // Route item toko
 Route::get('/item/create', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'create'])->name('item.create');
 Route::get('/item/{item}', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'show'])->name('item.show');
+Route::post('/item/buat_item', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'store'])->name('uploadDataItem');
+
 
 // Route profile
 Route::get('/profile/{user}', [App\Http\Controllers\KontrolerProfil::class, 'show'])->name('profile.show');

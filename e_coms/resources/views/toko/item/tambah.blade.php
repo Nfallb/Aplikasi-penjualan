@@ -17,7 +17,7 @@
                         </div>
                     </div>
 
-                    <form method="POST" action="{{ route('uploadDataToko') }}">
+                    <form method="POST" action="{{ route('uploadDataItem') }}">
                         @csrf
 
                         <div class="row mb-3">

@@ -44,8 +44,8 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Present your business in a whole new way</h1>
-                            <p class="lead text-white-50 mb-4">:D</p>
+                            <h1 class="display-5 fw-bolder text-white mb-2">Heyo Ini Landing Page Buat {{ config('app.name', 'Iyh') }}</h1>
+                            <p class="lead text-white-50 mb-4">:P</p>
                             <p class="lead text-white" style="font-size: 10px" >Me at 2 AM: <a href="https://www.youtube.com/watch?v=2nVZgn5IOJI">https://www.youtube.com/watch?v=2nVZgn5IOJI</a></p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>

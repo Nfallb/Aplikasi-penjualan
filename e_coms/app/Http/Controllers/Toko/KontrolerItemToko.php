@@ -16,4 +16,17 @@ class KontrolerItemToko extends Controller
     {
         return view('toko.item.itemShow', compact('item'));
     }
+    public function store()
+    {
+        $data_tervalidasi = request()->validate([
+            'nama_item' => ['string', 'max:30'],
+            'harga' => ['integer'],
+            'deskripsi' => ['string'],
+
+        ]);
+        // kode membuat data yang tadi
+        // ke database
+        auth()->user()->toko->items()->create(array_merge($data_tervalidasi));
+        
+    }
 }
