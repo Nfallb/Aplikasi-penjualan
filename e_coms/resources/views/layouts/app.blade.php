@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -69,6 +70,8 @@
                                     <a class="dropdown-item" href="{{ route('toko.register', Auth::user()->id) }}">
                                        Jadi partner kami
                                     </a>
+
+                                    <a class="dropdown-item fw-bold " href="">Keranjang <i class="bi bi-basket ps-1 "></i></a>
                                 </div>
                             </li>
                         @endguest

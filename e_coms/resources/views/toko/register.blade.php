@@ -52,7 +52,7 @@
                             <label for="telephone" class="col-md-4 col-form-label text-md-end">No. Telephone :</label>
                         
                             <div class="col-md-6">
-                                <input id="telephone" type="text" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone">
+                                <input id="telephone" type="text" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ auth()->user()->phone }}" required autocomplete="telephone">
                         
                                 @error('telephone')
                                     <span class="invalid-feedback" role="alert">

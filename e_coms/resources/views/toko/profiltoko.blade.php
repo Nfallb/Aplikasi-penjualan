@@ -10,6 +10,7 @@
             <div class="d-flex justify-content-between align-items-baseline">
                 <div class="d-flex align-items-center">
                     <h1 class="display-5 border-2 border-bottom border-dark d-inline h-4">{{ $toko->nama_toko }}</h1> <!-- NOTE: Blade template commands are still gonna be executed even though it is behind an html comment -->
+                    <a class="ps-5" href="{{ route('item.create') }}">Tambah Item Toko</a>
                 </div>
             </div>
 

@@ -29,6 +29,10 @@ Route::post('/toko/register/buat_toko', [App\Http\Controllers\Toko\KontrolerRegi
 Route::get('/toko/{toko}', [App\Http\Controllers\KontrolerToko::class, 'show'])->name('toko.show');
 Route::get('/toko', [App\Http\Controllers\KontrolerToko::class, 'index'])->name('toko');
 
+// Route item toko
+Route::get('/item/create', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'create'])->name('item.create');
+Route::get('/item/{item}', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'show'])->name('item.show');
+
 // Route profile
 Route::get('/profile/{user}', [App\Http\Controllers\KontrolerProfil::class, 'show'])->name('profile.show');
 Route::patch('/profile/update', [App\Http\Controllers\KontrolerProfil::class, 'update'])->name('profile.update');
