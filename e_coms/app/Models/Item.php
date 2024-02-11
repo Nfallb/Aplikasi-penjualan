@@ -13,8 +13,8 @@ class Item extends Model
         'deskripsi',
     ];
 
-    public function toko()
+    public function kategori()
     {
-        return $this->belongsTo(Toko::class);
+        return $this->belongsTo(Kategori::class);
     }
 }

@@ -5,22 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Toko extends Model
+class Kategori extends Model
 {
     protected $fillable = [
-        'nama_toko',
-        'genre',
-        'lokasi',
+        'nama',
         'deskripsi',
-        'telephone',
-        'sosmed',
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-    public function items()
+    public function items(): HasMany
     {
         return $this->hasMany(Item::class);
     }

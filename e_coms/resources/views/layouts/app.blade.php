@@ -66,10 +66,10 @@
                                         @csrf
                                     </form>
 
-                                    <!-- Be a partner button -->
+                                    {{-- <!-- Be a partner button -->
                                     <a class="dropdown-item" href="{{ route('toko.register', Auth::user()->id) }}">
                                        Jadi partner kami
-                                    </a>
+                                    </a> --}}
 
                                     <a class="dropdown-item fw-bold " href="">Keranjang <i class="bi bi-basket ps-1 "></i></a>
                                 </div>
