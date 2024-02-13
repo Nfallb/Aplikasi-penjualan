@@ -18,24 +18,48 @@ class KontrolerKategori extends Controller
         return redirect()->back();
     }
 
-    public function manipulate(Request $request, Kategori $kategoris)
+    public function update(Request $request, Kategori $kategoris)
     {
-        $selectedKategoris = $kategoris->whereIn('id', $request);
-        if($request['action'] === 'update')
+        $selectedKategoris = $kategoris->whereIn('id', $request)->get();
+        foreach($selectedKategoris as $kategori)
         {
-            foreach($selectedKategoris->get() as $kategori)
-            {
-                $kategori->update([
-                    'nama' => $request[$kategori->id . '-nama'],
-                    'deskripsi' => $request[$kategori->id . '-deskripsi']
-                ]);
-            }
-        }
-        else if($request['action'] === 'delete')
-        {
-            $selectedKategoris->delete();
+            $kategori->update([
+                'nama' => $request[$kategori->id . '-nama'],
+                'deskripsi' => $request[$kategori->id . '-deskripsi']
+            ]);
         }
 
         return redirect()->back();
     }
+
+    public function destroy(Request $request, Kategori $kategoris)
+    {
+        $selectedKategoris = $kategoris->whereIn('id', $request);
+        $selectedKategoris->delete();
+
+        return redirect()->back();
+    }
+
+    // Legacy Code
+    // public function manipulate(Request $request, Kategori $kategoris)
+    // {
+    //     dd($request);
+    //     $selectedKategoris = $kategoris->whereIn('id', $request);
+    //     if($request['action'] === 'update')
+    //     {
+    //         foreach($selectedKategoris->get() as $kategori)
+    //         {
+    //             $kategori->update([
+    //                 'nama' => $request[$kategori->id . '-nama'],
+    //                 'deskripsi' => $request[$kategori->id . '-deskripsi']
+    //             ]);
+    //         }
+    //     }
+    //     else if($request['action'] === 'delete')
+    //     {
+    //         $selectedKategoris->delete();
+    //     }
+
+    //     return redirect()->back();
+    // }
 }

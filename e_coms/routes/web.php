@@ -37,5 +37,11 @@ Route::get('/admin/kategori', [App\Http\Controllers\Admin\KontrolerAdmin::class,
 Route::get('/admin/{kategori}/item', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_kategori_items'])->name('admin.index.kategori.items');
 
 // Route kategori
-Route::patch('/kategori/manipulate', [App\Http\Controllers\KontrolerKategori::class, 'manipulate'])->name('kategori.manipulate');
+/*
+    no way to alternate between patch and delete in the FE (not that i know of),
+    so both of these route method is set to post
+    as a work around. fix if and when possible
+*/
+Route::post('/kategori/update', [App\Http\Controllers\KontrolerKategori::class, 'update'])->name('kategori.update');
 Route::post('/kategori', [App\Http\Controllers\KontrolerKategori::class, 'store'])->name('kategori.store');
+Route::post('/kategori/destroy', [App\Http\Controllers\KontrolerKategori::class, 'destroy'])->name('kategori.destroy');

@@ -12,7 +12,7 @@
                         <th>Deskripsi</th>
                         <th>Select</th>
                     </tr>
-                    <form action="" id="manipulateItems" method="POST">
+                    <form id="manipulateItems" method="POST">
                         @csrf
                         @method('PATCH')
                         @foreach ($items as $item)

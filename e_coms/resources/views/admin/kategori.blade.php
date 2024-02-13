@@ -12,9 +12,8 @@
                         <th>Select</th>
                         <th>Items</th>
                     </tr>
-                    <form action="{{ route('kategori.manipulate') }}" id="manipulateKategori" method="POST">
+                    <form id="manipulateKategori" method="POST">
                         @csrf
-                        @method('PATCH')
                         @foreach ($kategoris as $kategori)
                             <tr>
                                 <td>{{ $kategori->id }}</td>
@@ -36,13 +35,12 @@
                     </form>
                 </table>
                 <div class="row">
-                    <div class="col-12">
-                        <input form="manipulateKategori" type="radio" name="action" id="update" value="update"><label for="update" checked>Update</label>
-                        <input form="manipulateKategori" type="radio" name="action" id="delete" value="delete"><label for="delete">Delete</label>
+                    <div class="col-2">
+                        <button formaction="{{ route('kategori.update') }}" form="manipulateKategori" class="btn btn-success flex" type="submit">Update</button>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2"><button form="manipulateKategori" class="btn btn-success flex" type="submit">Commit</button></div>
+                    <div class="col-2">
+                        <button formaction="{{ route('kategori.destroy') }}" form="manipulateKategori" class="btn btn-danger flex" type="submit">Delete</button>
+                    </div>
                 </div>
             </form>
             {{ $kategoris->links() }}
