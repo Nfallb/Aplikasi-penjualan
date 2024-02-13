@@ -36,4 +36,5 @@ Route::get('/admin/dashboard', [App\Http\Controllers\Admin\KontrolerAdmin::class
 Route::get('/admin/kategori', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_kategori'])->name('admin.index.kategori');
 
 // Route kategori
-Route::patch('/kategori/update', [App\Http\Controllers\KontrolerKategori::class, 'update'])->name('kategori.update');
+Route::patch('/kategori/manipulate', [App\Http\Controllers\KontrolerKategori::class, 'manipulate'])->name('kategori.manipulate');
+Route::post('/kategori', [App\Http\Controllers\KontrolerKategori::class, 'store'])->name('kategori.store');
