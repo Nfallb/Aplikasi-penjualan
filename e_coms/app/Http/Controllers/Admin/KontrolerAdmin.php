@@ -18,4 +18,10 @@ class KontrolerAdmin extends Controller
         $kategoris = Kategori::paginate(5);
         return view('admin.kategori', compact('kategoris'));
     }
+
+    public function index_kategori_items(Kategori $kategori)
+    {
+        $items = $kategori->items()->paginate(5);
+        return view('admin.item', compact('items'));
+    }
 }

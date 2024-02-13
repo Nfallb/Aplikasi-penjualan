@@ -10,6 +10,7 @@
                         <th>Nama</th>
                         <th>Deskripsi</th>
                         <th>Select</th>
+                        <th>Items</th>
                     </tr>
                     <form action="{{ route('kategori.manipulate') }}" id="manipulateKategori" method="POST">
                         @csrf
@@ -20,6 +21,7 @@
                                 <td><input name="{{ $kategori->id }}-nama" type="text" placeholder="{{ $kategori->nama }}" value="{{$kategori->nama}}"></td>
                                 <td><textarea name="{{ $kategori->id }}-deskripsi" cols="40" rows="1">{{ $kategori->deskripsi }}</textarea></td>
                                 <td><input type="checkbox" name="{{ $kategori->id }}-selected" value="{{ $kategori->id }}" @checked(false)></td>
+                                <td><a href="{{ route('admin.index.kategori.items', $kategori->id) }}"><i class="bi bi-arrow-bar-right"></i></a></td>
                             </tr>
                         @endforeach
                     </form>

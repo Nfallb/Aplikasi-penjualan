@@ -22,7 +22,7 @@ Auth::routes();
 // Home
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route item toko
+// Route item
 Route::get('/item/create', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'create'])->name('item.create');
 Route::get('/item/{item}', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'show'])->name('item.show');
 Route::post('/item/buat_item', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'store'])->name('uploadDataItem');
@@ -34,6 +34,7 @@ Route::patch('/profile/update', [App\Http\Controllers\KontrolerProfil::class, 'u
 // Route admin
 Route::get('/admin/dashboard', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_dashboard'])->name('admin.index.dashboard');
 Route::get('/admin/kategori', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_kategori'])->name('admin.index.kategori');
+Route::get('/admin/{kategori}/item', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_kategori_items'])->name('admin.index.kategori.items');
 
 // Route kategori
 Route::patch('/kategori/manipulate', [App\Http\Controllers\KontrolerKategori::class, 'manipulate'])->name('kategori.manipulate');
