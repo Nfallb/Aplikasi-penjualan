@@ -34,3 +34,6 @@ Route::patch('/profile/update', [App\Http\Controllers\KontrolerProfil::class, 'u
 // Route admin
 Route::get('/admin/dashboard', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_dashboard'])->name('admin.index.dashboard');
 Route::get('/admin/kategori', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_kategori'])->name('admin.index.kategori');
+
+// Route kategori
+Route::patch('/kategori/update', [App\Http\Controllers\KontrolerKategori::class, 'update'])->name('kategori.update');
