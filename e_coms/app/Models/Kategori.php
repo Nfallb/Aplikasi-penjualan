@@ -12,7 +12,7 @@ class Kategori extends Model
         'deskripsi',
     ];
 
-    public function items(): HasMany
+    public function items()
     {
         return $this->hasMany(Item::class);
     }
