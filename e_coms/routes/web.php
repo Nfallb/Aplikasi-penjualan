@@ -38,6 +38,7 @@ Route::get('/admin/{kategori}/item', [App\Http\Controllers\Admin\KontrolerAdmin:
 
 // Route kategori
 /*
+    v Note buat nanya di stackoverflow. kacangin aja, -Dinar v
     no way to alternate between patch and delete in the FE (not that i know of),
     so both of these route method is set to post
     as a work around. fix if and when possible
@@ -45,3 +46,6 @@ Route::get('/admin/{kategori}/item', [App\Http\Controllers\Admin\KontrolerAdmin:
 Route::post('/kategori/update', [App\Http\Controllers\KontrolerKategori::class, 'update'])->name('kategori.update');
 Route::post('/kategori', [App\Http\Controllers\KontrolerKategori::class, 'store'])->name('kategori.store');
 Route::post('/kategori/destroy', [App\Http\Controllers\KontrolerKategori::class, 'destroy'])->name('kategori.destroy');
+
+// Route keranjang
+Route::get('keranjang/{keranjang}', [App\Http\Controllers\KontrolerKeranjang::class, 'show'])->name('keranjang.show');

@@ -47,8 +47,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function toko()
+    public function keranjang()
     {
-        return $this->hasOne(Toko::Class);
+        return $this->hasOne(Keranjang::class);
     }
 }

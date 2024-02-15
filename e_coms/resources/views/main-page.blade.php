@@ -33,7 +33,7 @@
                                 <div class="card-body p-4">
                                     <div class="text-center">
                                         <!-- Product name-->
-                                        <h5 class="fw-bolder">{{ $item->nama_item }}</h5>
+                                        <h5 class="fw-bolder"><a class="text-decoration-none text-dark " href="{{ route('item.show', $item->id) }}">{{ $item->nama_item }}</a></h5>
                                         <!-- Product reviews-->
                                         <div class="d-flex justify-content-center small text-warning mb-2">
                                             <div class="bi-star-fill"></div>

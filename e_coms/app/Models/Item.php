@@ -17,4 +17,9 @@ class Item extends Model
     {
         return $this->belongsTo(Kategori::class);
     }
+
+    public function keranjangs()
+    {
+        return $this->belongsToMany(Keranjang::class);
+    }
 }

@@ -71,14 +71,14 @@
                                        Jadi partner kami
                                     </a> --}}
 
-                                    <a class="dropdown-item fw-bold " href="">Keranjang <i class="bi bi-basket ps-1 "></i></a>
+                                    <a class="dropdown-item fw-bold " href="{{ route('keranjang.show', auth()->user()->keranjang->id) }}">Keranjang <i class="bi bi-basket ps-1 "></i></a>
                                 </div>
                             </li>
                         @endguest
                     </ul>
                     <div class="ms-2">
                         <form action="" method="post">
-                            <input class="form-control" type="text" name="" id="" placeholder="Cari Toko">
+                            <input class="form-control" type="text" name="" id="" placeholder="Cari Item">
                         </form> 
                     </div>
                 </div>
