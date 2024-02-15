@@ -35,6 +35,7 @@ Route::patch('/profile/update', [App\Http\Controllers\KontrolerProfil::class, 'u
 Route::get('/admin/dashboard', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_dashboard'])->name('admin.index.dashboard');
 Route::get('/admin/kategori', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_kategori'])->name('admin.index.kategori');
 Route::get('/admin/{kategori}/item', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_kategori_items'])->name('admin.index.kategori.items');
+Route::get('/admin/users', [App\Http\Controllers\Admin\KontrolerAdmin::class, 'index_users'])->name('admin.index.users');
 
 // Route kategori
 /*
@@ -48,4 +49,5 @@ Route::post('/kategori', [App\Http\Controllers\KontrolerKategori::class, 'store'
 Route::post('/kategori/destroy', [App\Http\Controllers\KontrolerKategori::class, 'destroy'])->name('kategori.destroy');
 
 // Route keranjang
-Route::get('keranjang/{keranjang}', [App\Http\Controllers\KontrolerKeranjang::class, 'show'])->name('keranjang.show');
+Route::get('/keranjang/{keranjang}', [App\Http\Controllers\KontrolerKeranjang::class, 'show'])->name('keranjang.show');
+Route::post('/keranjang/{item}/store', [App\Http\Controllers\KontrolerKeranjang::class, 'keranjang_item_store'])->name('keranjang.item.store');

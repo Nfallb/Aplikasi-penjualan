@@ -14,13 +14,16 @@
                     </div>
                     <hr>
                     <p class="lead">{{ $item->deskripsi }}</p>
-                    <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi-cart-fill me-1"></i>
-                            Add to cart
-                        </button>
-                    </div>
+                    <form action="{{ route('keranjang.item.store', ['item' => $item->id]) }}" method="POST">
+                        @csrf
+                        <div class="d-flex">
+                            <input class="form-control text-center me-3" id="inputQuantity" name="jumlah" type="number" value="1" style="max-width: 5rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0" type="submit">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

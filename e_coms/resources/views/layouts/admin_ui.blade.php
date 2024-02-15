@@ -25,10 +25,7 @@
             <div class="list-group list-group-flush">
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('admin.index.dashboard') }}">Dashboard</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('admin.index.kategori') }}">Kategori Item</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Item</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">User</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('admin.index.users') }}">User</a>
             </div>
         </div>
         <!-- Page content wrapper-->

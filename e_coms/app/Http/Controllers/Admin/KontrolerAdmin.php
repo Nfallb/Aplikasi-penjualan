@@ -24,4 +24,9 @@ class KontrolerAdmin extends Controller
         $items = $kategori->items()->paginate(5);
         return view('admin.item', compact('items'));
     }
+
+    public function index_users()
+    {
+        return view('admin.user');
+    }
 }

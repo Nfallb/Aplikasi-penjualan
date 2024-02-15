@@ -29,7 +29,7 @@
                   <p><span class="text-muted">Jumlah: </span>{{ $item->pivot->jumlah }}</p>
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                  <h5 class="mb-0">$499.00</h5>
+                  <h5 class="mb-0">Total: Rp. {{ $item->harga * $item->pivot->jumlah }}</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                   <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
