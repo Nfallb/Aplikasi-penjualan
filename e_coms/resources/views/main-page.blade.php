@@ -6,7 +6,7 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">2 Black men with bouncy cake kissing</p>
+                <p class="lead fw-normal text-white-50 mb-0">Iya Saya Ubah</p>
             </div>
         </div>
     </header>
