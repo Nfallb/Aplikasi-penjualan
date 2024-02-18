@@ -5,9 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Kategori;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Middleware\AdminAccess;
 
 class KontrolerAdmin extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(AdminAccess::class);
+    }
+
     public function index_dashboard()
     {
         return view('admin.dashboard');
@@ -27,6 +33,7 @@ class KontrolerAdmin extends Controller
 
     public function index_users()
     {
-        return view('admin.user');
+        $users = User::paginate(10);
+        return view('admin.user', compact('users'));
     }
 }
