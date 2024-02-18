@@ -19,20 +19,29 @@
           <div class="card rounded-3 mb-4">
             <div class="card-body p-4">
               <div class="row d-flex justify-content-between align-items-center">
+
                 <div class="col-md-2 col-lg-2 col-xl-2">
                   <img
                     src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
                     class="img-fluid rounded-3" alt="Cotton T-shirt">
                 </div>
+                
                 <div class="col-md-3 col-lg-3 col-xl-3">
-                  <p class="lead fw-normal mb-2">{{ $item->nama_item }}</p>
+                  <p class="lead fw-normal mb-2"><a class="text-decoration-none text-dark" href="{{ route('item.show', ['item'=>$item->id]) }}">{{ $item->nama_item }}</a></p>
                   <p><span class="text-muted">Jumlah: </span>{{ $item->pivot->jumlah }}</p>
                 </div>
+
                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                  <p><span class="text-muted" style="font-size: 13px">Rp. {{$item->harga}} x {{ $item->pivot->jumlah }}</span></p>
                   <h5 class="mb-0">Total: Rp. {{ $item->harga * $item->pivot->jumlah }}</h5>
                 </div>
+
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                  <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                  <form action="{{ route('keranjang.item.destroy', ['item'=>$item->id]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-outline-danger "><i style="font-size: 20px" class="bi bi-trash"></i></button>
+                  </form>
                 </div>
               </div>
             </div>

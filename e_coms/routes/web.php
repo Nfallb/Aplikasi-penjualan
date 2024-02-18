@@ -51,6 +51,7 @@ Route::post('/kategori/destroy', [App\Http\Controllers\KontrolerKategori::class,
 // Route keranjang
 Route::get('/keranjang/{keranjang}', [App\Http\Controllers\KontrolerKeranjang::class, 'show'])->name('keranjang.show');
 Route::post('/keranjang/{item}/store', [App\Http\Controllers\KontrolerKeranjang::class, 'keranjang_item_store'])->name('keranjang.item.store');
+Route::delete('/keranjang/{item}/destroy', [App\Http\Controllers\KontrolerKeranjang::class, 'keranjang_item_destroy'])->name('keranjang.item.destroy');
 
 // Route pembayaran
 Route::get('/pembayaran/{keranjang}', [App\Http\Controllers\KontrolerPembayaran::class, 'checkout_show'])->name('checkout.show');

@@ -15,12 +15,27 @@ class KontrolerKeranjang extends Controller
 
     public function keranjang_item_store(Item $item)
     {
+        $keranjangItems = auth()->user()->keranjang->items();
+        $itemLama = $keranjangItems->find($item->id);
         $validated = request()->validate([
             'jumlah' => ['integer']
         ]);
 
-        $new_item = auth()->user()->keranjang->items()->attach($item->id, ['jumlah' => $validated['jumlah']]);;
-        
+        if($itemLama)
+        {
+            $jumlahLama = $itemLama->pivot->jumlah;
+            $itemLama->pivot->update(['jumlah' => $jumlahLama+$validated['jumlah']]);
+        }
+        else
+        {
+            $new_item = $keranjangItems->attach($item->id, ['jumlah' => $validated['jumlah']]);
+        }
         return redirect()->route('keranjang.show', ['keranjang' => auth()->user()->keranjang->id]);
+    }
+
+    public function keranjang_item_destroy(Item $item)
+    {
+        auth()->user()->keranjang->items()->detach($item->id);
+        return redirect()->back();
     }
 }
