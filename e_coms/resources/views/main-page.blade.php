@@ -13,7 +13,10 @@
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
-            @foreach ($kategoris as $kategori)
+            @if ($kategoris->count() === 0)
+                <p>Toko saat ini tidak memiliki kategori & item. Hubungi IT Support kami</p>
+                @else
+                @foreach ($kategoris as $kategori)
                 <h1 class="mb-0">{{ $kategori->nama }}</h1>
                 <p class="mb-0 " style="font-size: 15px">{{ $kategori->deskripsi }}</p>
                 <hr>
@@ -58,7 +61,7 @@
                 </div>
                 <hr>                
             @endforeach
-            </div>
+            @endif
         </div>
     </section>
     <!-- Footer-->

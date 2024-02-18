@@ -23,9 +23,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route item
-Route::get('/item/create', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'create'])->name('item.create');
-Route::get('/item/{item}', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'show'])->name('item.show');
-Route::post('/item/buat_item', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'store'])->name('uploadDataItem');
+Route::post('/item/store', [App\Http\Controllers\Toko\KontrolerItemToko::class, 'store'])->name('item.store');
 
 // Route profile
 Route::get('/profile/{user}', [App\Http\Controllers\KontrolerProfil::class, 'show'])->name('profile.show');

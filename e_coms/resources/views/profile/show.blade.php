@@ -12,7 +12,7 @@
                         <input type="file" name="pfp" id="pfp" class="form-control ">
                     </div>
                     <div class="d-flex flex-column align-items-center text-center p-3">
-                        <img class="rounded-circle" width="150px" src="/storage/{{ $user->pfp ?? 'defaults/placeholder_img.png' }}">    
+                        <img class="rounded-circle" width="150px" src="/storage/{{ $user->pfp ?? 'defaults/placeholder.jpg' }}">    
                         <span class="font-weight-bold">{{ $user->username }}</span><span class="text-black-50">{{ $user->email }}</span>
                     </div>
                 </div>

@@ -1,48 +1,59 @@
 @extends('layouts.admin_ui')
 
 @section('content')
-    <h1>Item Kategori lorem </h1>
+    <h1>Item dari kategori Lorem</h1>
     <div class="row">
         <div class="col-12 ">
                 <table class="table table-striped ">
                     <tr class="table-dark ">
                         <th>DBID</th>
+                        <th>Gambar</th>
                         <th>Nama</th>
-                        <th>Harga</th>
                         <th>Deskripsi</th>
+                        <th>Harga</th>
                         <th>Select</th>
                     </tr>
-                    <form id="manipulateItems" method="POST">
+                    <form id="manipulateItem" method="POST">
                         @csrf
-                        @method('PATCH')
-                        @foreach ($items as $item)
+                        @if ($items->count() === 0)
+                            <td></td>
+                            <td></td>
+                            <td>Kategori ini tidak memiliki item</td>
+                            <td></td>
+                            <td></td>
+                            @else
+                            @foreach ($items as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
+                                <td><img src="/storage/{{ 'defaults/placeholder.jpg' }}" alt=""></td>
                                 <td><input name="{{ $item->id }}-nama" type="text" placeholder="{{ $item->nama_item }}" value="{{ $item->nama_item }}"></td>
-                                <td><input name="{{ $item->id }}-harga" type="number" placeholder="{{ $item->harga }}"></td>
-                                <td><textarea name="{{ $item->id }}-deskripsi" cols="40" rows="1">{{ $item->deskripsi }}</textarea></td>
+                                <td><textarea name="{{ $item->id }}-deskripsi" cols="20" rows="1">{{ $item->deskripsi }}</textarea></td>
+                                <td><input type="number" name="{{ $item->id }}-harga" placeholder="{{ $item->harga }}" value="{{ $item->harga }}"></td>
                                 <td><input type="checkbox" name="{{ $item->id }}-selected" value="{{ $item->id }}" @checked(false)></td>
                             </tr>
                         @endforeach
+                        @endif
                     </form>
-                    <form action="" method="POST" id="storeItem">
+                    <form action="{{ route('item.store') }}" method="POST" id="createItem">
+                        <input type="hidden" name="kategori_id" form="createItem" value="{{ $kategori->id }}">
                         @csrf
                         <tr>
                             <td></td>
-                            <td><input type="text" name="nama_item" form="storeItem" placeholder="Nama Kategori baru"></td>
-                            <td><textarea name="deskripsi" form="storeItem" cols="40" rows="1"></textarea></td>
-                            <td><button class="btn btn-primary" form="storeItem" type="submit">Tambah</button></td>
+                            <td><input form="createItem" type="file" name="gambar"></td>
+                            <td><input form="createItem" type="text" name="nama" placeholder="Nama Item baru"></td>
+                            <td><textarea form="createItem" name="deskripsi" placeholder="Deskripsi" cols="20" rows="1"></textarea></td>
+                            <td><input form="createItem" type="number" name="harga" placeholder="Harganya"></td>
+                            <td><button class="btn btn-primary" form="createItem" type="submit">Tambah</button></td>
                         </tr>
                     </form>
                 </table>
                 <div class="row">
-                    <div class="col-12">
-                        <input form="manipulateItems" type="radio" name="action" id="update" value="update"><label for="update" checked>Update</label>
-                        <input form="manipulateItems" type="radio" name="action" id="delete" value="delete"><label for="delete">Delete</label>
+                    <div class="col-2">
+                        <button formaction="{{ route('kategori.update') }}" form="manipulateKategori" class="btn btn-success flex" type="submit">Update</button>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2"><button form="manipulateItems" class="btn btn-success flex" type="submit">Commit</button></div>
+                    <div class="col-2">
+                        <button formaction="{{ route('kategori.destroy') }}" form="manipulateKategori" class="btn btn-danger flex" type="submit">Delete</button>
+                    </div>
                 </div>
             </form>
             {{ $items->links() }}
