@@ -25,7 +25,7 @@
                             @foreach ($items as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td><img src="/storage/{{ 'defaults/placeholder.jpg' }}" alt=""></td>
+                                <td><img src="/storage/{{ $item->gambar }}" style="max-width: 50px;" alt="Img not found"></td>
                                 <td><input name="{{ $item->id }}-nama" type="text" placeholder="{{ $item->nama_item }}" value="{{ $item->nama_item }}"></td>
                                 <td><textarea name="{{ $item->id }}-deskripsi" cols="20" rows="1">{{ $item->deskripsi }}</textarea></td>
                                 <td><input type="number" name="{{ $item->id }}-harga" placeholder="{{ $item->harga }}" value="{{ $item->harga }}"></td>
@@ -34,13 +34,13 @@
                         @endforeach
                         @endif
                     </form>
-                    <form action="{{ route('item.store') }}" method="POST" id="createItem">
+                    <form action="{{ route('item.store') }}" enctype="multipart/form-data" method="POST" id="createItem">
                         <input type="hidden" name="kategori_id" form="createItem" value="{{ $kategori->id }}">
                         @csrf
                         <tr>
                             <td></td>
-                            <td><input form="createItem" type="file" name="gambar"></td>
-                            <td><input form="createItem" type="text" name="nama" placeholder="Nama Item baru"></td>
+                            <td><input type="file" name="gambar"></td>
+                            <td><input type="text" name="nama_item" placeholder="Nama Item baru"></td>
                             <td><textarea form="createItem" name="deskripsi" placeholder="Deskripsi" cols="20" rows="1"></textarea></td>
                             <td><input form="createItem" type="number" name="harga" placeholder="Harganya"></td>
                             <td><button class="btn btn-primary" form="createItem" type="submit">Tambah</button></td>
@@ -55,7 +55,6 @@
                         <button formaction="{{ route('kategori.destroy') }}" form="manipulateKategori" class="btn btn-danger flex" type="submit">Delete</button>
                     </div>
                 </div>
-            </form>
             {{ $items->links() }}
         </div>
     </div>
