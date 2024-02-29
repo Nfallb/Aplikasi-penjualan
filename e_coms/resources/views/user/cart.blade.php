@@ -22,8 +22,8 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2">
                   <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                    class="img-fluid rounded-3" alt="Cotton T-shirt">
+                    src="/storage/{{ $item->gambar }}"
+                    class="img-fluid rounded-3" alt="{{ $item->nama_item }}">
                 </div>
                 
                 <div class="col-md-3 col-lg-3 col-xl-3">

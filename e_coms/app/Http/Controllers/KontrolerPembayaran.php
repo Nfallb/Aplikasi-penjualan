@@ -27,10 +27,10 @@ class KontrolerPembayaran extends Controller
             ],
 
             'customer_details' => [
-                'first_name' => 'Lorem',
-                'last_name' => 'Ipsum',
-                'email' => 'lorem@gmail.com',
-                'phone' => '08323212443',
+                'first_name' => auth()->user()->name,
+                'last_name' => auth()->user()->username,
+                'email' => auth()->user()->email,
+                'phone' => auth()->user()->phone,
             ],
         ];
 
